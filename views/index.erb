@@ -1,0 +1,51 @@
+<h1>Below are the offered coupons!</h1>
+
+<li><a href='/coupons/create'>Create Coupon</a></li>
+
+<table>
+  <thead>
+    <th>
+      Title
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Product
+    </th>
+    <th>
+      Discount
+    </th>
+    <th>
+      Expiration
+    </th>
+    <th>
+      Edit
+    </th>
+  </thead>
+
+  <tbody>
+    <% @coupons.each do |coupon| %>
+      <tr>
+        <td>
+          <%= coupon.id %>
+        </td>
+        <td>
+          <%= coupon.title %>
+        </td>
+        <td>
+          <%= coupon.description.to_s %>
+        </td>
+        <td>
+          <%= coupon.discount.to_s %>
+        </td>
+        <td>
+          <%= coupon.expiration.to_s %>
+        </td>
+        <td>
+          <a href='/coupons/edit/<%= coupon.id %>'>Edit</a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
